@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home{% endblock %}
+
+{% block body %}
+    <table>
+        {% for car in cars %}
+           <tr>
+               <td>{{ car.makeModel }}</td>
+               <td>{{ car.fuel }}</td>
+               <td>
+                   {{ car.isVrtExemptString()}}
+               </td>
+           </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -33,13 +33,14 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/subtract", name="subtract")
+     * @Route("/subtract/{num1}/{num2}", name="subtract")
      */
-    public function subtract(): Response
+    public function subtract($num1, $num2, $result): Response
     {
         // modifying the code using vars template and args
         $template = 'default/subtract.html.twig';
-        $args = ['controller_name' => 'DefaultController'];
+        $result = $num1 - $num2;
+        $args = ['num1' => $num1, 'num2' => $num2, $result];
 
         return $this->render($template, $args);
     }

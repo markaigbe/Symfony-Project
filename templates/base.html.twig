@@ -2,17 +2,42 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <title>My Restaurant: {% block title %}Welcome!{% endblock %}</title>
+
+
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+
+
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <style>
+            h1{
+                color: red;
+            }
+            p{
+                background-color: yellow;
+            }
+        </style>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ url('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('limerick') }}">
+                        Limerick
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </head>
+
+
     <body>
         {% block body %}{% endblock %}
     </body>
